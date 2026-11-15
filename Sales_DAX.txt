@@ -1,0 +1,20 @@
+Sales
+Revenue = Sales[Units] * RELATED('Product'[RetailPrice])                         
+Total Revenue = SUM(Sales[Revenue])
+Cost = Sales[Units] * RELATED('Product'[StandardCost])
+Gross Profit = Sales[Revenue] - Sales[Cost]
+Total Profit = SUM(Sales[Gross Profit])
+
+
+
+
+
+Date Master = CALENDAR(FIRSTDATE(Sales[Date]),LASTDATE(Sales[Date]))
+
+Month = 'Date Master'[Date].[Month]
+
+Month Order = 'Date Master'[Date].[MonthNo]
+
+Qtr = 'Date Master'[Date].[Quarter]
+
+Year = YEAR('Date Master'[Date])
